@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Menu List</h1>
+
+    {% if menu_list %}
+    <ul>
+
+      {% for menu in menu_list %}
+      <li>
+        <a href="{{ menu.get_absolute_url }}">{{ menu.title }}</a> ({{ menu.price}})
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no menu in the library.</p>
+    {% endif %}
+{% endblock %}
